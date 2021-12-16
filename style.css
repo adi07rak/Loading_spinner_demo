@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width:100px;
+    height: 100vh;
+    background-color: rgb(32,35, 48);
+}
+
+#logo {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    animation: fill 3s ease forwards infinite 1.5s;
+}
+
+#logo path:nth-child(1){
+    stroke-dasharray: 490.2921142578125;
+    stroke-dashoffset: 490.2921142578125;
+    /* stroke-dashoffset: 0; */
+    animation: character-animation1 3s ease both infinite 1.5s;
+}
+
+#logo path:nth-child(2){
+    stroke-dasharray: 571.5773315429688;
+    stroke-dashoffset:  571.5773315429688;
+    animation: character-animation2 3s ease both infinite 1.5s;
+    /* animation-delay: 1s; */
+}
+
+#logo path:nth-child(3){
+    stroke-dasharray: 226.94400024414062;
+    stroke-dashoffset: 226.94400024414062;
+    animation: character-animation3 3s ease both infinite 1.5s;
+}
+
+@keyframes character-animation1 {
+     50% {
+         stroke-dashoffset: 0;
+     }
+     0%, 100%  {
+         stroke-dashoffset: 490.2921142578125;
+     }
+     
+}
+
+@keyframes character-animation2 {
+    50% {
+        stroke-dashoffset: 0;
+    }
+    0%, 100% {
+        stroke-dashoffset: 571.5773315429688;
+    }
+    
+}
+
+@keyframes character-animation3 {
+    50% {
+        stroke-dashoffset: 0;
+    }
+    0%, 100% {
+        stroke-dashoffset: 226.94400024414062;
+    }
+    
+}
+
+/* @keyframes new-animation {
+    to{
+        stroke-dashoffset: 0;
+    }
+} */
+
+@keyframes fill {
+    0%, 100% {
+        fill: transparent;
+    }
+    50% {
+        fill:white;
+    }
+}
+
+.spinner-1 div{
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    height: 280px;
+    margin-top: -140px;
+    margin-left: -140px;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    border-top-color: coral;
+    animation: spinner calc(1.2s/ var(--d,1)) cubic-bezier(0.5,0,0.5,1) infinite;
+}
+
+.spinner-1 div:nth-child(1) {
+    animation-delay: calc(-0.45s / var(--d,1));
+  }
+  
+  .spinner-1 div:nth-child(2) {
+    animation-delay: calc(-0.3s / var(--d,1));
+  }
+  
+  .spinner-1 div:nth-child(3) {
+    animation-delay: calc(-0.15s / var(--d,1));
+  }
+  
+
+@keyframes spinner {
+    100%{
+        transform: rotate(360deg);
+    }
+    0%{
+        transform: rotate(0deg);
+    }
+}
